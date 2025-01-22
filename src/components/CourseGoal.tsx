@@ -1,13 +1,17 @@
-export default function CourseGoal(props: {
+import React from "react";
+
+interface CourseGoalProps {
   title: string;
-  description: string;
-}): JSX.Element {
-  const { title, description } = props;
+  children: React.ReactNode;
+}
+
+export default function CourseGoal(props: CourseGoalProps): JSX.Element {
+  const { title, children } = props;
   return (
     <article>
       <div>
         <h2>{title}</h2>
-        <p>{description}</p>
+        <p>{children}</p>
       </div>
       <button>Delete</button>
     </article>
